@@ -12,9 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Conexión a MongoDB
-const MONGODB_URI = process.env.MONGODB_URI;
-
-//const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://christianalac20:Zoldyck28$@cluster0.3v9rx.mongodb.net/trading-app' ; 
+const MONGODB_URI = process.env.MONGODB_URI
 
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
@@ -27,12 +25,11 @@ mongoose.connect(MONGODB_URI, {
 
 // Ruta de saludo en la raíz
 app.get('/', (req, res) => {
-    res.send('<h1>Loteria API</h1>');
-  });
+  res.send('<h1>Loteria API</h1>');
+});
 
 // Rutas
 app.use('/api/puestos', require('./routes/puestos'));
-
 
 // Iniciar el servidor
 app.listen(PORT, () => {
