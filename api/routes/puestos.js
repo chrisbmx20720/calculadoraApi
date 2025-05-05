@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     res.json(puestos);
   } catch (err) {
     res.status(500).json({ error: 'Error al obtener los puestos'})
-    console.err;
+    console.error('Error al obtener los puestos:', err.message);
   }
 });
 
@@ -21,7 +21,8 @@ router.post('/', async (req, res) => {
     const guardado = await nuevo.save();
     res.status(201).json(guardado);
   } catch (err) {
-    res.status(400).json({ error: 'Error al guardar el puesto' });
+    res.status(400).json({ error: 'Error al guardar el puesto'});
+    console.error
   }
 });
 
