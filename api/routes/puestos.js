@@ -9,7 +9,8 @@ router.get('/', async (req, res) => {
     const puestos = await Puesto.find();
     res.json(puestos);
   } catch (err) {
-    res.status(500).json({ error: 'Error al obtener los puestos' });
+    res.status(500).json({ error: 'Error al obtener los puestos'})
+    console.err;
   }
 });
 
